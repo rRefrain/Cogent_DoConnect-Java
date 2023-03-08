@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    hikari:
+      maxLifetime: '2000000'
+      poolName: SpringBootJPAHikariCP
+      connectionTimeout: '30000'
+      minimumIdle: '5'
+      idleTimeout: '30000'
+      maximumPoolSize: '20'
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/cogentDoConnect
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: trace
+doConnect:
+  app:
+    jwtExpirationMs: '86400000'
+    jwtCookieName: doConnect
+    jwtSecret: doConnectSecretKey
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
+server:
+  port: '9192'
